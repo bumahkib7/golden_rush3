@@ -23,12 +23,14 @@ class GoldRush extends FlameGame
   Future<void> onLoad() async {
     super.onLoad();
     var hud = HudComponent();
-    add(Background());
-    add(George(
+    var george = George(
         hud: hud,
         position: Vector2(200, 400),
         size: Vector2(48.0, 48.0),
-        speed: 40.0));
+        speed: 40.0);
+
+    add(Background(george));
+    add(george);
     add(Zombie(
         position: Vector2(100, 200), size: Vector2(32.0, 64.0), speed: 20.0));
     add(Zombie(
